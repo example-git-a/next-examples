@@ -9,7 +9,7 @@ export  default function Mermaid({ src }: { src: string; }) {
 
     useEffect(() => {
         if (src) {
-            mermaid.init({}, ref.current!);
+            mermaid.init({'theme':'dark'}, ref.current!);
         }
     }, [ref.current, src])
 

@@ -26,8 +26,6 @@ import Button from '@mui/material/Button';
 
 import { useChat } from 'ai/react';
 
-import Tree from './tree'
-import Mermaid from './graph'
 import FileDropZone from '@/components/dnd';
 
 const drawerWidth: number = 240;
@@ -107,15 +105,6 @@ export default function Chat() {
     });
   };
 
-  const chartDefinition = `
-    graph TD;
-      A-->Bだよ;
-      A-->C;
-      B-->D;
-      C-->D;
-      D-->E;
-  `;
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -169,24 +158,9 @@ export default function Chat() {
         </Toolbar>
         <Divider />
         <List component="nav">
-          <div>
-            <input
-              accept="*/*"
-              style={{ display: 'none' }}
-              id="folder-upload"
-              type="file"
-              webkitdirectory="" // 空文字列または "true" を指定
-              onChange={handleFolderChange}
-              multiple
-            />
-            <label htmlFor="folder-upload">
-              フォルダをアップロード
-            </label>
-          </div>
           {/* {mainListItems} */}
           <Divider sx={{ my: 1 }} />
           {/* {secondaryListItems} */}
-          <Tree />
         </List>
       </Drawer>
       <Box
@@ -216,7 +190,6 @@ export default function Chat() {
                   height: 'auto',
                 }}
               >
-                <Mermaid src={chartDefinition} />
                 {/* <Chart /> */}
               </Paper>
             </Grid>
