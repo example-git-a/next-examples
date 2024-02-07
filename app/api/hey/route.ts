@@ -8,7 +8,7 @@ import { OpenAIStream, StreamingTextResponse } from 'ai';
 // );
 
 // https://learn.microsoft.com/en-us/javascript/api/overview/azure/openai-readme?view=azure-node-preview#using-an-api-key-from-openai
-const client = new OpenAIClient(new OpenAIKeyCredential("KEY"));
+const client = new OpenAIClient(new OpenAIKeyCredential(process.env.OPENAI_API_KEY!));
  
 // IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
