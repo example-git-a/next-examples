@@ -84,7 +84,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 // const defaultTheme = createTheme();
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat({ api: '/api/hey' });
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   const [open, setOpen] = useState(true);
   const toggleDrawer = () => {
