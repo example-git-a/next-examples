@@ -1,13 +1,16 @@
 'use client'
 import React, { useState, useRef } from 'react';
 
-const Spotlight = ({ children, isOn }) => {
-    // const [isOn, setIsOn] = useState(false);
-    // const spotlightRef = useRef(null);
+const Spotlight = ({ children }) => {
+    const [isOn, setIsOn] = useState(false);
+    const spotlightRef = useRef(null);
 
     return (
         <div>
-            <div style={{
+            <button onClick={() => setIsOn(!isOn)} style={{ marginBottom: '10px' }}>
+                {isOn ? 'Spotlight Off' : 'Spotlight On'}
+            </button>
+            <div ref={spotlightRef} style={{
                 position: 'relative',
                 zIndex: isOn ? 2 : 1,
                 borderRadius: '10px', // 丸い四角形を作る
