@@ -86,7 +86,7 @@ export default function FileDropZone({ onDrop }: { onDrop: (files: File[]) => vo
                         onChange={handleFileInputChange}
                         style={{ display: 'none', }}
                     />
-                    <UploadIcon /><br/>
+                    <UploadIcon style={{pointerEvents: 'none'}} /><br/>
                     {/* <Typography fontSize={14}> */}
                         {isDragging ? 'ファイルをリリースしてアップロード' :
                             'アップロードするファイルをドラッグ＆ドロップします'}
